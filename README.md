@@ -19,7 +19,7 @@ Concevoir un serveur **multi-thread** basé sur les sockets TCP en Java, capable
 | `clientMT` | Se connecte avec `InetAddress` et `InetSocketAddress` (timeout de 5 s), affiche le message de bienvenue, puis envoie des messages jusqu'à la saisie de `quit`. |
 
 
-## 4. Exécution
+## 2. Exécution
 
 1. Lancer `serverMT` (message attendu : `Le serveur attend la connexion d'un client...`).
 2. Lancer un ou plusieurs clients : Telnet (`telnet localhost 1234`) ou `clientMT`.
@@ -27,23 +27,23 @@ Concevoir un serveur **multi-thread** basé sur les sockets TCP en Java, capable
 
 ---
 
-## 5. Tests et captures d'écran
+## 3. Tests et captures d'écran
 
 
 
-### Test 2 : Connexion de deux clients Telnet
+### Test 1 : Connexion de deux clients Telnet
 
 ![Capture 2 - Deux clients Telnet connectés](images/capture2_telnet.png)
 
 **Synthèse :** Deux fenêtres Telnet se connectent avec `telnet localhost 1234`. Chacune reçoit son numéro d'ordre (client n°1 et client n°2). La console du serveur affiche l'adresse IP et le port de chaque client ainsi que les messages reçus. Cela montre que le serveur gère plusieurs clients en même temps, chacun dans son propre thread.
 
-### Test 3 : Connexion de clients Java
+### Test 2 : Connexion de clients Java
 
 ![Capture 3 - Clients Java connectés](images/capture3_clients_java.png)
 
 **Synthèse :** Plusieurs instances de `client` sont lancées. Chaque client reçoit un numéro d'ordre unique qui continue la numérotation du serveur. Les messages envoyés alternativement par les clients reçoivent chacun leur écho sans interférence, ce qui confirme l'indépendance des communications.
 
-### Test 4 : Déconnexion d'un client
+### Test 3 : Déconnexion d'un client
 
 ![Capture 4 - Déconnexion d'un client](images/capture4_deconnexion.png)
 ![Capture 1 - ](images/capture4_serveur.png)
@@ -51,7 +51,7 @@ Concevoir un serveur **multi-thread** basé sur les sockets TCP en Java, capable
 
 **Synthèse :** Après la saisie de `quit` dans un client, le serveur affiche `Client n°X déconnecté`. Les autres clients restent connectés et continuent à échanger avec le serveur, car chaque thread ferme uniquement sa propre socket.
 
-### Test 5 : Test en réseau local 
+### Test 4 : Test en réseau local 
 
 ![Capture 5 - Test réseau local](images/client1.png)
 ![Capture 6 - Test réseau local](images/client2.png)
