@@ -51,7 +51,7 @@ Concevoir un serveur **multi-thread** basé sur les sockets TCP en Java, capable
 
 **Synthèse :** Après la saisie de `quit` dans un client, le serveur affiche `Client n°X déconnecté`. Les autres clients restent connectés et continuent à échanger avec le serveur, car chaque thread ferme uniquement sa propre socket.
 
-### Test 5 : Test en réseau local (plusieurs machines)
+### Test 5 : Test en réseau local 
 
 ![Capture 5 - Test réseau local](images/client1.png)
 ![Capture 6 - Test réseau local](images/client2.png)
