@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ClientProcess extends Thread {
+public class ClientProcess3_1 extends Thread {
 
     private Socket socket;
     private int numero;
 
-    public ClientProcess(Socket socket, int numero) {
+    public ClientProcess3_1(Socket socket, int numero) {
         this.socket = socket;
         this.numero = numero;
     }
@@ -31,7 +31,7 @@ public class ClientProcess extends Thread {
 
             // Envoyer le numéro d'ordre au client
             pw.println(
-                    "Bienvenue, vous êtes le client n°" + numero
+                    "Bienvenue, vous etes le client n" + numero
             );
 
             // Lire les messages envoyés par ce client
@@ -40,7 +40,7 @@ public class ClientProcess extends Thread {
             while (ligne != null && !ligne.equals("quit")) {
 
                 System.out.println(
-                        "[Client n°" + numero + "] a envoyé : " + ligne
+                        "[Client n" + numero + "] a envoye : " + ligne
                 );
 
                 // Renvoyer le message au client
@@ -50,13 +50,13 @@ public class ClientProcess extends Thread {
             }
 
             System.out.println(
-                    "Client n°" + numero + " déconnecté"
+                    "Client n" + numero + " deconnecte"
             );
 
         } catch (IOException e) {
 
             System.out.println(
-                    "Erreur client n°" + numero + " : " + e.getMessage()
+                    "Erreur client n" + numero + " : " + e.getMessage()
             );
 
         } finally {

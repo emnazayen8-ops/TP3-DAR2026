@@ -10,10 +10,10 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class client {
+public class client3_1 {
 
     // localhost pour les tests sur la même machine
-    static final String IP_SERVEUR = "localhost";
+    static final String IP_SERVEUR = "192.168.1.208";
     static final int PORT = 1234;
 
     public static void main(String[] args) {

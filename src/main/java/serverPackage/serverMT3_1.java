@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class serverMT {
+public class serverMT3_1 {
 
     static final int PORT = 1234;
 
@@ -31,7 +31,7 @@ public class serverMT {
                 );
 
                 // Créer un thread dédié à ce client
-                new ClientProcess(socket, numero).start();
+                new ClientProcess3_1(socket, numero).start();
             }
 
         } catch (IOException e) {
